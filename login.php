@@ -1,10 +1,15 @@
 <?php
 
 
-require_once("includes/view.php");
 require_once("includes/model_collection.php");
 require_once("includes/model_product.php");
+require_once("includes/model_producttype.php");
+require_once("includes/model_customer.php");
+require_once("includes/form.php");
 
+require_once("includes/view.php");
+
+session_start();
 
 $oView = new View();
 $oCollection = new Collection();
@@ -18,6 +23,35 @@ if(isset($_GET["typeid"])){
 $oProductType = new ProductType();
 $oProductType->load($iTypeID);
 
+$oForm = new Form();
+
+	if(isset($_POST["submit"])){
+		$oForm->data = $_POST;
+
+		$oForm->checkRequired("email");
+		$oForm->checkRequired("password");
+
+		$oCustomer = $oCollection->findCustomerByEmail($_POST["email"]);
+
+		if($oCustomer == false){
+			$oForm->raiseCustomErorr("email","Email is not registered");
+		}else{
+			$sCustomerPassword = $oCustomer->Password;
+			if($_POST["password"] !== $sCustomerPassword){
+				$oForm->raiseCustomErorr("password","Password is incorrect");
+			}else{
+
+				$_SESSION["CustomerID"] == $oCustomer->CustomerID;
+
+				header("Location:index.php");
+				exit;
+			}
+		}
+	}
+
+	$oForm->makeTextInput("EMAIL", "email", "text");
+	$oForm->makeTextInput("PASSWORD", "password", "password");
+	$oForm->makeSubmit("SIGN IN", "submit");
 require_once("includes/header.php");  
 
 ?>
@@ -31,21 +65,21 @@ require_once("includes/header.php");
 		
 		<div id="loginBox">
 			<h2>SIGN IN</h2>
-			<form action="">
-				
-			<label for="email">Email</label><br><input type="text" name="email"><br>
+			
+			
+			<?php echo $oForm->html; ?>
+			<!-- <label for="email">Email</label><br><input type="text" name="email"><br>
 			<label for="password">Password</label><br><input type="password" name="password"><br>
-			<input type="submit" name="signin" value="SIGN IN">
+			<input type="submit" name="signin" value="SIGN IN"> -->
 
-			</form>
+			
 		</div>
 
 		<div id="notAMember">
-			<h2>Dont Have an Account?</>
-			<form action="">
+			<h2>Dont Have an Account?</h2>
 			
-			<input type="submit" name="submit" value="CREATE AN ACCOUNT">
-			</form>
+			<a href="register.php">CREATE AN ACCOUNT</a>
+			
 		</div>
 		</div>
 
