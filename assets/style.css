@@ -129,29 +129,101 @@ body:before{
 	margin-left:0px;
 	font-family: helvetica;
 	font-size: 12px;
-}
-
-#customerBox ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    margin-right:40px;
+	outline: red solid;
 }
 
 
-#customerBox ul li a{
-	float:left;
+/*#customerBox ul li a{
 	display: inline-block;
 	font-family: helvetica;
-	font-size: 12px;
+	font-size: 11px;
 	float: right;
 	padding: 10px;
 	padding-left:15px;
 	padding-right:15px;
 	color: black;
 	border-right: 1px solid black;
+	outline: blue solid;
 }
 
+#customerBox p{
+	outline:green solid;
+	float: right;
+	display: inline-block;
+	font-size: 11px;
+}*/
+#customerBox #Wishlist{
+	display: inline-block;
+	padding-right:10px;
+	margin-left:10px;
+	border-right: black 1px solid;
+	outline: blue solid;
+}
+
+#customerBox #Wishlist a{
+	display: inline-block;
+	color: black;
+}
+
+#customerBox #Wishlist p{
+	display: inline-block;
+}
+
+#customerBox #Bag{
+	padding-left: 10px;
+	display: inline-block;
+	padding-right:10px;
+/*	border-right: black 1px solid;*/
+/*	outline: green solid;*/
+}
+
+#customerBox #Bag a{
+	display: inline-block;
+	color:black;
+}
+
+#customerBox #Bag p{
+	display: inline-block;
+}
+
+#customerBox #Welcome{
+	padding-left:10px;
+	padding-right:10px;
+	display: block;
+	float:left;
+	width:110px;
+	padding-right:10px;
+/*	outline: red solid;*/
+}
+
+#customerBox #Welcome a{
+	display: inline-block;
+	color: black;
+}
+
+#customerBox #Welcome p{
+	display: inline-block;
+}
+
+#customerBox #Logout{
+	padding-left:10px;
+	padding-right:10px;
+	float:left;
+	width:160px;
+	padding-right:10px;
+/*	border-right: black 1px solid;*/
+/*	outline: red solid;*/
+	text-indent: 90px;
+}
+
+#customerBox #Logout a{
+	display: inline-block;
+	color: black;
+}
+
+#customerBox #Logout p{
+	display: inline-block;
+}
 /*/////////////////NOTES://////change to nth-child*/
 #customerBox ul li a.login{
 	color:#F6684C;
@@ -1004,4 +1076,170 @@ body:before{
 	display:block;
 	content: "";
 	clear:both;
+}
+
+
+/*------------------SHOPPING BAG*/
+#shoppingBag{
+	margin-top:110px;
+}
+
+#shoppingBag #continueShopping{
+	position: absolute;
+	top:205px;
+	left:280px;
+}
+
+#shoppingBag #continueShopping a{
+	color: black;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: bolder;
+}
+
+#shoppingBag #continueShopping a:hover{
+	color:#F6684C ;
+}
+
+#shoppingBag h2{
+	font-family: 'Lora';
+	font-weight: lighter;
+	font-size: 23px;
+	text-align: center;
+	border-bottom: 1px #CFCFCF solid;;
+}
+#shoppingBag table{
+	float:left;
+	margin-top:100px;
+	margin-left:60px;
+}
+#shoppingBag table th{
+	border-bottom: 1px #CFCFCF solid;
+	font-family: helvetica;
+	font-weight: lighter;
+	font-size: 14px;
+}
+
+#shoppingBag table td{
+	padding:20px;
+}
+#shoppingBag table img{
+	width:150px;
+	height:auto;
+	float:left;
+}
+
+#shoppingBag table p{
+	margin-top:0px;
+	margin-bottom:20px;
+	float:left;
+	display: block;
+}
+
+#shoppingBag table .insideTable{
+	margin-left:0px;
+	margin-top:0px;
+	padding:0px;
+}
+
+#shoppingBag table .insideTable a{
+	color: #F6684C;
+}
+
+#shoppingBag table .outsideTable{
+	border-bottom: 1px #CFCFCF solid;
+}
+
+#orderSummary{
+}
+#orderSummary table{
+	float:left;
+	margin-top:50px;
+	width:280px;
+	border: 1px solid #CFCFCF;
+	margin-left:80px;
+}
+
+#orderSummary table th{
+	font-family: helvetica;
+	font-weight: lighter;
+	font-size: 17px;
+	background-color: #CFCFCF;
+	padding-left: 20px;
+	padding-right:20px;
+	padding-top:16px;
+	padding-bottom:16px;
+}
+
+#orderSummary td{
+	padding:20px;
+	text-align: center;
+}
+
+#orderSummary .orderSummaryTotal{
+	font-size: 19px;
+	border-top:1px #CFCFCF solid;
+}
+
+.productName{
+	font-weight: bolder;
+}
+
+#shoppingBag .wishlistIcon{
+	display:block;
+	width:120px;
+	background-image: url(images/wishlist.png);
+	background-repeat: no-repeat;
+	background-position: 95px;
+	background-size: 12px, 12px;
+}
+	
+#shoppingBag .wishlistIcon:hover{
+	display:block;
+/*	color:#F6684C;*/
+	width:120px;
+	background-image: url(images/wishlisthover.png);
+	background-repeat: no-repeat;
+	background-position: 95px;
+}
+
+#shoppingBag .removeitemIcon{
+	display:block;
+	width:110px;
+	background-image: url(images/removeitem.png);
+	background-repeat: no-repeat;
+	background-position: 75px;
+	background-size: 16px, 16px;
+}
+	
+#shoppingBag .removeitemIcon:hover{
+	display:block;
+/*	color:#F6684C;*/
+	width:110px;
+	background-image: url(images/removeitemhover.png);
+	background-repeat: no-repeat;
+	background-position: 75px;
+}
+
+
+#orderSummary a{
+	margin:0px;
+	color: white;
+	height:30px;
+	width:260px;
+	padding:10px;
+	background-color: #f17056;
+	float:left;
+	margin-left:80px;
+	margin-top:16px;
+	text-decoration: none;
+	font-family: helvetica;
+	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+#orderSummary a:hover{
+	background-color: #F6684C;
 }

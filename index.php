@@ -4,6 +4,10 @@
 require_once("includes/view.php");
 require_once("includes/model_collection.php");
 require_once("includes/model_product.php");
+require_once("includes/model_customer.php");
+
+
+session_start();
 
 
 $oView = new View();

@@ -34,14 +34,14 @@ $oForm = new Form();
 		$oCustomer = $oCollection->findCustomerByEmail($_POST["email"]);
 
 		if($oCustomer == false){
-			$oForm->raiseCustomErorr("email","Email is not registered");
+			$oForm->raiseCustomError("email","Email is not registered");
 		}else{
 			$sCustomerPassword = $oCustomer->Password;
 			if($_POST["password"] !== $sCustomerPassword){
-				$oForm->raiseCustomErorr("password","Password is incorrect");
+				$oForm->raiseCustomError("password","Password is incorrect");
 			}else{
 
-				$_SESSION["CustomerID"] == $oCustomer->CustomerID;
+				$_SESSION["CustomerID"] = $oCustomer->CustomerID;
 
 				header("Location:index.php");
 				exit;

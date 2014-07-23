@@ -4,6 +4,7 @@ require_once("includes/view.php");
 require_once("includes/model_collection.php");
 require_once("includes/model_product.php");
 
+session_start();
 
 $oView = new View();
 $oCollection = new Collection();

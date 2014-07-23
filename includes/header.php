@@ -42,13 +42,30 @@
 			</div> 
 	
 			<div id="customerBox">
-						
-					<ul>
-						<li><a class="login" href="login.php">Login</a></li>
-						<li><a href="#">Bag(0) NZD $0.00</a></li>
-						<li><a href="#">Wishlist</a></li>
-					</ul>
+
+				<?php  
+				if(isset($_SESSION["CustomerID"])){
+					$oLoginCustomer = new Customer();
+					$oLoginCustomer->load($_SESSION["CustomerID"]);
 				
+					echo '<div id="Welcome"<p> Welcome &nbsp;</p><a class="login" href="login.php">'.$oLoginCustomer->FirstName.'</a></div>
+						<div id="Logout"<a href="logout.php">Logout</a></div>
+						<div id="Wishlist"><a href="#">Wishlist</a><p>(0)</p></div>
+						<div id="Bag"<a href="#">Bag</a><p>(0) NZD $0.00</p></div>';
+						
+
+
+				}else{
+					echo '<ul>
+						<li><a class="login" href="login.php">Login</a></li>
+						<li><a href="#">Wishlist</a><p>(0)</p></li>
+						<li><a href="#">Bag</a><p>(0) NZD $0.00</p></li>
+					</ul>';
+				}
+				
+				?>
+						
+					
 			</div>
 	
 	
