@@ -3,8 +3,11 @@
 	require_once("includes/view.php");
 	require_once("includes/model_collection.php");
 	require_once("includes/model_product.php");
+	require_once("includes/model_cart.php");
 
 	session_start();
+
+	$oCart = $_SESSION["Cart"];
 	
 	$oView = new View();
 	$oCollection = new Collection();
@@ -40,9 +43,11 @@
 			<div id="shoppingBag">
 				<h2>SHOPPING BAG</h2>
 				<div id="continueShopping">
-					<a href="index.php">< &nbsp;CONTINUE SHOPPING</a>
+					<a href="productcatalogue.php?typeid=1">< &nbsp;CONTINUE SHOPPING</a>
 				</div>
-			<table class="outsideTable">
+
+				 <?php echo $oView->renderShoppingCart($oCart); ?>
+			<!-- <table class="outsideTable">
 				<tr>
 					<th></th>
 					<th>DETAILS</th>
@@ -84,11 +89,12 @@
 					</tr>
 				</td>
 			</table>
-		
+		 -->
 			</div>
 
 			<div id="orderSummary">
-				<table>
+				<?php echo $oView->renderOrderSummary($oCart); ?>
+				<!-- <table>
 					<tr>
 						<th>Order Summary</th>
 					</tr>
@@ -102,7 +108,7 @@
 					</tr>
 					
 				</table>
-			
+			 -->
 			<a class="checkoutButton" href="">CHECKOUT</a>
 
 

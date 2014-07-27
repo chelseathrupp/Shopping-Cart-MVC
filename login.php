@@ -5,6 +5,7 @@ require_once("includes/model_collection.php");
 require_once("includes/model_product.php");
 require_once("includes/model_producttype.php");
 require_once("includes/model_customer.php");
+require_once("includes/model_cart.php");
 require_once("includes/form.php");
 
 require_once("includes/view.php");
@@ -42,6 +43,10 @@ $oForm = new Form();
 			}else{
 
 				$_SESSION["CustomerID"] = $oCustomer->CustomerID;
+
+				// $oCart = new Cart();
+				
+				// $_SESSION["Cart"] = $oCart;
 
 				header("Location:index.php");
 				exit;

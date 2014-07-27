@@ -77,6 +77,12 @@ require_once("connection.php");
 		case "Description":
 		return $this->sDescription;
 		break;
+		case "Colour":
+		return $this->sColour;
+		break;
+		case "Style":
+		return $this->sStyle;
+		break;
 		case "Price":
 		return $this->fPrice;
 		break;

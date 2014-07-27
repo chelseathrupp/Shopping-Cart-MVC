@@ -5,10 +5,14 @@ require_once("includes/view.php");
 require_once("includes/model_collection.php");
 require_once("includes/model_product.php");
 require_once("includes/model_customer.php");
+require_once("includes/model_cart.php");
 
 
 session_start();
 
+$oCart = new Cart();
+				
+$_SESSION["Cart"] = $oCart;
 
 $oView = new View();
 $oCollection = new Collection();

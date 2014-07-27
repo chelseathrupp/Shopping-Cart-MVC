@@ -129,7 +129,6 @@ body:before{
 	margin-left:0px;
 	font-family: helvetica;
 	font-size: 12px;
-	outline: red solid;
 }
 
 
@@ -152,12 +151,55 @@ body:before{
 	display: inline-block;
 	font-size: 11px;
 }*/
+
+#Bag{
+	background-image: url(images/shoppingbagicon.png);
+	background-repeat: no-repeat;
+	background-size: 25px, 25px;
+	width:10px;
+	float:left;
+	height:25px;
+}
+
+#Bag a{
+	line-height: 25px;
+	margin-top:5px;
+	margin-left:-1px;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#Bag:hover{
+	background-image: url(images/shoppingbagiconhover.png);
+}
+
+#Wishlist{
+	background-image: url(images/wishlisthover.png);
+	background-repeat: no-repeat;
+	background-size: 23px, 23px;
+	width:15px;
+	height:35px;
+	background-position: 1px, 3px;
+	margin-right:5px;
+}
+
+#Wishlist a{
+	line-height: 25px;
+	margin-top:5px;
+	margin-left:9px;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#Wishlist:hover{
+	background-image: url(images/wishlisthover2.png);
+}
+
 #customerBox #Wishlist{
 	display: inline-block;
+	float:left;
 	padding-right:10px;
 	margin-left:10px;
-	border-right: black 1px solid;
-	outline: blue solid;
 }
 
 #customerBox #Wishlist a{
@@ -187,13 +229,14 @@ body:before{
 }
 
 #customerBox #Welcome{
+	margin-top:10px;
 	padding-left:10px;
+	float:left;
 	padding-right:10px;
 	display: block;
-	float:left;
-	width:110px;
+	width:102px;
 	padding-right:10px;
-/*	outline: red solid;*/
+	border-right: 1px black solid;
 }
 
 #customerBox #Welcome a{
@@ -205,15 +248,35 @@ body:before{
 	display: inline-block;
 }
 
+#customerBox #Login{
+	margin-top:10px;
+	padding-left:10px;
+	float:left;
+	padding-right:10px;
+	display: block;
+	width:102px;
+	padding-right:10px;
+	border-right: 1px black solid;
+}
+
+#customerBox #Login a{
+	display: inline-block;
+	color: black;
+}
+
+#customerBox #Login p{
+	display: inline-block;
+}
+
 #customerBox #Logout{
+	margin-top:10px;
 	padding-left:10px;
 	padding-right:10px;
 	float:left;
-	width:160px;
+	width:40px;
 	padding-right:10px;
 /*	border-right: black 1px solid;*/
-/*	outline: red solid;*/
-	text-indent: 90px;
+
 }
 
 #customerBox #Logout a{
@@ -1087,7 +1150,7 @@ body:before{
 #shoppingBag #continueShopping{
 	position: absolute;
 	top:205px;
-	left:280px;
+	left:270px;
 }
 
 #shoppingBag #continueShopping a{
@@ -1108,10 +1171,11 @@ body:before{
 	text-align: center;
 	border-bottom: 1px #CFCFCF solid;;
 }
+
 #shoppingBag table{
 	float:left;
-	margin-top:100px;
-	margin-left:60px;
+	margin-top:80px;
+	margin-left:80px;
 }
 #shoppingBag table th{
 	border-bottom: 1px #CFCFCF solid;
@@ -1121,7 +1185,7 @@ body:before{
 }
 
 #shoppingBag table td{
-	padding:20px;
+	padding:16px;
 }
 #shoppingBag table img{
 	width:150px;
@@ -1151,13 +1215,20 @@ body:before{
 }
 
 #orderSummary{
+	position: absolute;
+	top:250px;
+	left:940px;
+	width:280px;
+
+/*	margin-top: 50px;
+	margin-left: 80px;*/
 }
 #orderSummary table{
 	float:left;
-	margin-top:50px;
+/*	margin-top:50px;*/
 	width:280px;
 	border: 1px solid #CFCFCF;
-	margin-left:80px;
+/*	margin-left:80px;*/
 }
 
 #orderSummary table th{
@@ -1184,6 +1255,8 @@ body:before{
 .productName{
 	font-weight: bolder;
 }
+
+
 
 #shoppingBag .wishlistIcon{
 	display:block;
@@ -1230,7 +1303,6 @@ body:before{
 	padding:10px;
 	background-color: #f17056;
 	float:left;
-	margin-left:80px;
 	margin-top:16px;
 	text-decoration: none;
 	font-family: helvetica;
